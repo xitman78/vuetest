@@ -1,19 +1,32 @@
 <template>
   <div class="mycomp">
-    <router-link to="/">Home</router-link>
     <h1>{{ msg }}</h1>
     <h2>My Own Vue Component</h2>
+    <el-button type="primary" @click="showAlert">Primary Button</el-button>
   </div>
 </template>
 
 <script>
+
+import Vue from 'vue'
+import { Button } from 'element-ui'
+
+Vue.component(Button.name, Button)
+
 export default {
   name: 'mycomp',
   data () {
     return {
       msg: 'This is my Component'
     }
+  },
+
+  methods: {
+    showAlert: () => {
+      window.alert('Thank you!!!')
+    }
   }
+
 }
 </script>
 
@@ -21,7 +34,7 @@ export default {
 <style scoped>
 
 .mycomp {
-  background-color: #DDDDDD;
+  background-color: white;
 }
 
 h1, h2 {

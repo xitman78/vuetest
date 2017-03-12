@@ -6,6 +6,7 @@ import MyComp from '@/components/MyComp'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
